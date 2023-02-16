@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Your Availablity!</title>
+</head>
+<body>
+    <h1 class="head">
+        License Eligibility
+    </h1>
+    <span class="result"></span>
+    <script>
+        const isEligible = (age) =>{
+            if(age<18){
+                return false;
+            }
+            else{
+                return true;
+            }
+
+        }
+        const result = ()=>{
+            let uInp = prompt("Enter Your Age?");
+            uInp = Number.parseInt(uInp);
+            if(isEligible(uInp)){
+                document.getElementsByClassName("result")[0].innerHTML = "Yes, you can drive";
+            }
+            else{
+                document.getElementsByClassName("result")[0].innerHTML = "No, you can't drive";
+                let reResp = confirm("Do you want to test again?")
+                if(reResp){
+                    result();
+                }
+            }
+        }
+        result();
+    </script>
+</body>
+</html>
