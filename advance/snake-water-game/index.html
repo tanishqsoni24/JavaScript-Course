@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scissor Paper Rock</title>
+</head>
+<body>
+    <span class="message"></span>
+    <script>
+        let replay = false;
+        do{
+            let userWant = prompt();
+            userWant = userWant.toLowerCase();
+            let catItems = ["s","p","r"]
+            let rslt = catItems[Math.floor((Math.random()*catItems.length))];
+            if((userWant=="s" && rslt=="p") || (userWant=="p" && rslt == "r") || (userWant=="r" && rslt == "s")){
+                console.log(userWant);
+                console.log(rslt);
+                alert("You Win");
+            }
+            else if((userWant=="s" && rslt=="r") || (userWant=="p" && rslt=="s") || (userWant=="r" && rslt=="p")){
+                console.log(userWant);
+                console.log(rslt);
+                alert("Computer Wins");
+            }
+            else if((userWant=="s" && rslt=="s") || (userWant=="p" && rslt=="p") || (userWant=="r" && rslt=="r")){
+                console.log(userWant);
+                console.log(rslt);
+                alert("Try again");
+            }
+            replay = confirm("Do you want to play again");
+        }while(replay);
+        if(!replay){
+            document.getElementsByClassName("message")[0].innerHTML = "Thanks for playing";
+        }
+    </script>
+</body>
+</html>
