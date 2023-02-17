@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">click me</button>
+    <button id="btn2">click me</button>
+    <button id="btn3">click me</button>
+    <button id="btn4">click me</button>
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let btn3 = document.getElementById("btn3");
+        let btn4 = document.getElementById("btn4");
+
+        function btn1func(){
+            alert("You clicked btn1")
+        } 
+        function btn2func(){
+            alert("You clicked btn2")
+        } 
+        function btn3func(){
+            alert("You clicked btn3")
+        } 
+        function btn4func(){
+            alert("You clicked btn4")
+        } 
+        btn1.addEventListener("click",btn1func);
+        btn2.addEventListener("click",btn2func);
+        btn3.addEventListener("click",btn3func);
+        btn4.addEventListener("click",btn4func); 
+    </script>
+
+        <!-- or -->
+
+    <button id="btn1" onclick="alert('You clicked btn1')">click me</button>
+    <button id="btn2" onclick="alert('You clicked btn2')">click me</button>
+    <button id="btn3" onclick="alert('You clicked btn3')">click me</button>
+    <button id="btn4" onclick="alert('You clicked btn4')">click me</button>
+
+</body>
+</html>
