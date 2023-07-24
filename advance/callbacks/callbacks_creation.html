@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+</body>
+<script>
+    function loadScript(src, callback){
+        let script = document.createElement('script');
+        script.src = src;
+        script.onload = () => callback(null);
+        script.onerror = () => callback(new Error(`Script load error for ${src}`));
+        document.body.appendChild(script);
+    }
+
+    function loadCss(error){    
+        if (error) {
+            alert(error);
+            return;
+        }
+        let link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        document.head.appendChild(link);
+    }
+    loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js", loadCss);
+</script>
+</html>
