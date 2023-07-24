@@ -14,9 +14,24 @@ let promise2 = new Promise((resolve, reject)=>{
 
 // and both of these promises are running in the background and we can use then and catch to handle the data or error and both run parallelly.
 
-promise1.then((data)=>{
-    console.log(data)
-})
+promise1.then(
+    (data)=>{
+        console.log(data)
+    },
+    (err)=>{
+        console.log("error ocured 1")
+    }
+)
+
+
+promise2.then(
+    (data)=>{ 
+        console.log(data)
+    },
+    (err)=>{
+        console.log("error ocured")
+    }
+)
 
 // promise2.then((data)=>{ 
 //     console.log(data)
@@ -26,6 +41,6 @@ promise1.then((data)=>{
 //     console.log(err)
 // })
 
-promise2.catch((err)=>{
-    console.log("error ocured")
-})
+// promise2.catch((err)=>{
+//     console.log("error ocured")
+// })
